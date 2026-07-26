@@ -1,0 +1,21 @@
+# Python virtual environment
+backend/venv/
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+
+# Environment variables (contains API keys)
+backend/.env
+
+# Generated files
+backend/uploads/
+backend/vector_db/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
