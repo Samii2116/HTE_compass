@@ -1,4 +1,6 @@
 import { FileText, Search, Upload, Filter, MoreVertical } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { uploadDocument } from '../services/api'
 import Header from '../components/layout/Header'
 import Card from '../components/ui/Card'
 import Badge from '../components/ui/Badge'
@@ -57,18 +59,77 @@ const documents = [
 ]
 
 export default function Documents() {
+
+  const fileInputRef = useRef(null)
+
+  const [uploading, setUploading] = useState(false)
+
+  const [message, setMessage] = useState("")
+  const handleUpload = async (event) => {
+
+    const file = event.target.files[0]
+  
+    if (!file) return
+  
+    try {
+  
+      setUploading(true)
+  
+      const result = await uploadDocument(file)
+  
+      setMessage(
+        `✅ ${result.filename} uploaded successfully (${result.chunks_created} chunks)`
+      )
+  
+    } catch (err) {
+
+      console.error("Upload Error:", err)
+  
+      if (err instanceof Error) {
+          setMessage(`❌ ${err.message}`)
+      } else {
+          setMessage("❌ Upload failed")
+      }
+  
+    } finally {
+  
+      setUploading(false)
+  
+    }
+  
+  }
+
   return (
     <div>
       <Header
         title="Documents"
         description="Manage and browse department documents and policies"
         actions={
-          <Button>
-            <Upload className="h-4 w-4" />
-            Upload Document
-          </Button>
+          <>
+            <input
+              type="file"
+              accept=".pdf"
+              hidden
+              ref={fileInputRef}
+              onChange={handleUpload}
+            />
+        
+            <Button
+              onClick={() => fileInputRef.current.click()}
+              disabled={uploading}
+            >
+              <Upload className="h-4 w-4" />
+              {uploading ? "Uploading..." : "Upload Document"}
+            </Button>
+          </>
         }
       />
+
+      {message && (
+        <div className="mb-4 rounded-lg border border-green-600 bg-green-900/20 p-3 text-green-400">
+          {message}
+        </div>
+      )}
 
       <Card className="mb-6">
         <div className="flex flex-col gap-4 sm:flex-row">
