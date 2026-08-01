@@ -65,7 +65,7 @@ async def bulk_index_repository(
     settings: Settings = Depends(get_settings),
     embedding_service: EmbeddingService = Depends(get_embedding_service),
 ) -> IndexRepositoryResponse:
-    target_dir = settings.uploads_dir if settings.uploads_dir.is_absolute() else (repository_service.BASE_DIR / settings.uploads_dir)
+    target_dir = settings.uploads_dir
     pdf_files = list(target_dir.glob("*.pdf"))
     if not pdf_files:
         return IndexRepositoryResponse(
