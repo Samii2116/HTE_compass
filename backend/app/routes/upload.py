@@ -10,6 +10,8 @@ from app.services.embedding_service import EmbeddingService
 from app.services.pdf_service import PDFProcessingError, handle_pdf_error, process_pdf
 from app.utils.validators import build_safe_filename, validate_pdf_upload
 
+from app.services.repository_service import repository_service
+
 router = APIRouter(tags=["Upload"])
 
 
@@ -48,7 +50,10 @@ async def upload_pdf(
     validate_pdf_upload(file)
 
     safe_filename = build_safe_filename(file.filename)
-    destination: Path = settings.uploads_dir / safe_filename
+    target_dir = settings.uploads_dir
+    target_dir.mkdir(parents=True, exist_ok=True)
+    destination = target_dir / safe_filename
+
 
     try:
         with destination.open("wb") as buffer:
@@ -69,6 +74,14 @@ async def upload_pdf(
 
     vector_store_manager.initialize(settings, embedding_service.embeddings)
     vector_store_manager.add_documents(chunks)
+
+    # Register in repository metadata store
+    stat = destination.stat()
+    repository_service.add_document(
+        filename=safe_filename,
+        size_bytes=stat.st_size,
+        chunks_created=len(chunks),
+    )
 
     return UploadSuccessResponse(
         success=True,

@@ -27,6 +27,35 @@ export async function uploadDocument(file) {
   return await response.json();
 }
 
+export async function getDocuments() {
+  const response = await fetch(`${API_URL}/documents`);
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.detail || `Failed to fetch documents (${response.status})`);
+  }
+  return await response.json();
+}
+
+export async function getStats() {
+  const response = await fetch(`${API_URL}/stats`);
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.detail || `Failed to fetch stats (${response.status})`);
+  }
+  return await response.json();
+}
+
+export async function triggerRepositoryIndex() {
+  const response = await fetch(`${API_URL}/repository/index`, {
+    method: "POST",
+  });
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.detail || `Repository index failed (${response.status})`);
+  }
+  return await response.json();
+}
+
 export async function askQuestion(question) {
   const response = await fetch(`${API_URL}/chat`, {
     method: "POST",

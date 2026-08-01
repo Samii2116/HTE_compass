@@ -1,0 +1,93 @@
+{
+  "documents": {
+    "about-engineering-presentation.pdf": {
+      "id": "about-engineering-presentation.pdf",
+      "filename": "about-engineering-presentation.pdf",
+      "title": "About Engineering Presentation",
+      "category": "General",
+      "department": "Technical Education",
+      "language": "English",
+      "upload_date": "Aug 01, 2026",
+      "size_bytes": 2905855,
+      "size": "2.8 MB",
+      "chunks_created": 23,
+      "status": "Indexed",
+      "variant": "success"
+    },
+    "Final-Information-Technology_sem_V_VI.pdf": {
+      "id": "Final-Information-Technology_sem_V_VI.pdf",
+      "filename": "Final-Information-Technology_sem_V_VI.pdf",
+      "title": "Final Information Technology Sem V Vi",
+      "category": "Regulations",
+      "department": "Technical Education",
+      "language": "English",
+      "upload_date": "Aug 01, 2026",
+      "size_bytes": 343594,
+      "size": "335.5 KB",
+      "chunks_created": 170,
+      "status": "Indexed",
+      "variant": "success"
+    },
+    "SRS_AI_Powered_Question_Answering_System_final.docx.pdf": {
+      "id": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+      "filename": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+      "title": "Srs Ai Powered Question Answering System Final.Docx",
+      "category": "General",
+      "department": "Administrative",
+      "language": "English",
+      "upload_date": "Aug 01, 2026",
+      "size_bytes": 134304,
+      "size": "131.2 KB",
+      "chunks_created": 9,
+      "status": "Indexed",
+      "variant": "success"
+    }
+  },
+  "stats": {
+    "total_documents": 3,
+    "total_chunks": 202,
+    "total_queries": 1,
+    "last_indexed_time": "2026-08-01 20:10:21",
+    "index_status": "Healthy"
+  },
+  "recent_activity": [
+    {
+      "title": "Document uploaded & indexed",
+      "description": "about-engineering-presentation.pdf (2.8 MB, 23 chunks)",
+      "time": "Just now",
+      "badge": "Upload",
+      "variant": "blue"
+    },
+    {
+      "title": "AI Query resolved",
+      "description": "Query: \"hii\"",
+      "time": "Just now",
+      "badge": "Assistant",
+      "variant": "purple"
+    },
+    {
+      "title": "Document uploaded & indexed",
+      "description": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf (131.2 KB, 9 chunks)",
+      "time": "Just now",
+      "badge": "Upload",
+      "variant": "blue"
+    },
+    {
+      "title": "Document uploaded & indexed",
+      "description": "Final-Information-Technology_sem_V_VI.pdf (335.5 KB, 170 chunks)",
+      "time": "Just now",
+      "badge": "Upload",
+      "variant": "blue"
+    },
+    {
+      "title": "Document uploaded & indexed",
+      "description": "about-engineering-presentation.pdf (2.8 MB, 23 chunks)",
+      "time": "Just now",
+      "badge": "Upload",
+      "variant": "blue"
+    }
+  ],
+  "top_queries": {
+    "hii": 1
+  }
+}

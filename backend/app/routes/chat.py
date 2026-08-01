@@ -7,6 +7,8 @@ from app.rag.vector_store import vector_store_manager
 from app.services.gemini_service import GeminiService, NO_RELEVANT_INFO_MESSAGE
 from app.services.embedding_service import EmbeddingService
 
+from app.services.repository_service import repository_service
+
 router = APIRouter(tags=["Chat"])
 
 
@@ -84,14 +86,18 @@ async def chat(
         ) from exc
 
     if retrieval is None:
+        repository_service.record_query(question)
         no_result = build_no_result_response()
         return ChatResponse(**no_result)
 
     answer = gemini_service.generate_answer(question, retrieval.context)
 
     if answer.strip() == NO_RELEVANT_INFO_MESSAGE:
+        repository_service.record_query(question)
         no_result = build_no_result_response()
         return ChatResponse(**no_result)
+
+    repository_service.record_query(question, retrieval.source_document)
 
     return ChatResponse(
         answer=answer,

@@ -7,8 +7,9 @@ from fastapi.responses import JSONResponse
 from pydantic import ValidationError
 
 from app.config import ensure_directories, get_settings
-from app.routes import chat, health, upload
+from app.routes import chat, documents, health, upload
 from app.services.embedding_service import EmbeddingService
+from app.services.repository_service import repository_service
 from app.rag.vector_store import vector_store_manager
 
 logger = logging.getLogger(__name__)
@@ -20,6 +21,7 @@ async def lifespan(app: FastAPI):
     ensure_directories(settings)
 
     try:
+        repository_service.sync_uploads_directory(settings.uploads_dir)
         embedding_service = EmbeddingService(settings)
         vector_store_manager.initialize(settings, embedding_service.embeddings)
         logger.info("Vector database loaded successfully.")
@@ -50,6 +52,7 @@ def create_app() -> FastAPI:
     )
 
     app.include_router(health.router)
+    app.include_router(documents.router)
     app.include_router(upload.router)
     app.include_router(chat.router)
 

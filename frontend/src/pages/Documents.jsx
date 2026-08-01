@@ -1,111 +1,89 @@
-import { FileText, Search, Upload, Filter, MoreVertical } from 'lucide-react'
-import { useRef, useState } from 'react'
-import { uploadDocument } from '../services/api'
+import { FileText, Search, Upload, RefreshCw } from 'lucide-react'
+import { useRef, useState, useEffect } from 'react'
+import { uploadDocument, getDocuments, triggerRepositoryIndex } from '../services/api'
 import Header from '../components/layout/Header'
 import Card from '../components/ui/Card'
 import Badge from '../components/ui/Badge'
 import Button from '../components/ui/Button'
 import Input from '../components/ui/Input'
 
-const documents = [
-  {
-    name: 'HTE Staff Recruitment Guidelines 2025',
-    category: 'Policy',
-    size: '2.4 MB',
-    updated: 'Mar 15, 2025',
-    status: 'Indexed',
-    variant: 'success',
-  },
-  {
-    name: 'College Affiliation Renewal Checklist',
-    category: 'Forms',
-    size: '890 KB',
-    updated: 'Mar 12, 2025',
-    status: 'Pending Review',
-    variant: 'warning',
-  },
-  {
-    name: 'Budget Allocation Framework FY 2025-26',
-    category: 'Finance',
-    size: '1.8 MB',
-    updated: 'Mar 10, 2025',
-    status: 'Indexed',
-    variant: 'success',
-  },
-  {
-    name: 'Leave Policy for Teaching Staff',
-    category: 'HR',
-    size: '456 KB',
-    updated: 'Mar 8, 2025',
-    status: 'Indexed',
-    variant: 'success',
-  },
-  {
-    name: 'Engineering College Infrastructure Norms',
-    category: 'Regulations',
-    size: '3.1 MB',
-    updated: 'Mar 5, 2025',
-    status: 'Indexed',
-    variant: 'success',
-  },
-  {
-    name: 'Circular — Principal Meeting March 2025',
-    category: 'Circulars',
-    size: '320 KB',
-    updated: 'Mar 1, 2025',
-    status: 'Draft',
-    variant: 'blue',
-  },
-]
-
 export default function Documents() {
-
   const fileInputRef = useRef(null)
-
+  const [documents, setDocuments] = useState([])
+  const [loading, setLoading] = useState(true)
   const [uploading, setUploading] = useState(false)
+  const [indexing, setIndexing] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [message, setMessage] = useState('')
 
-  const [message, setMessage] = useState("")
-  const handleUpload = async (event) => {
-
-    const file = event.target.files[0]
-  
-    if (!file) return
-  
+  const fetchDocs = async () => {
     try {
-  
-      setUploading(true)
-  
-      const result = await uploadDocument(file)
-  
-      setMessage(
-        `✅ ${result.filename} uploaded successfully (${result.chunks_created} chunks)`
-      )
-  
+      setLoading(true)
+      const data = await getDocuments()
+      setDocuments(data)
     } catch (err) {
-
-      console.error("Upload Error:", err)
-  
-      if (err instanceof Error) {
-          setMessage(`❌ ${err.message}`)
-      } else {
-          setMessage("❌ Upload failed")
-      }
-  
+      console.error('Failed to load documents:', err)
+      setMessage(`❌ Failed to load documents: ${err.message}`)
     } finally {
-  
-      setUploading(false)
-  
+      setLoading(false)
     }
-  
   }
+
+  useEffect(() => {
+    fetchDocs()
+  }, [])
+
+  const handleUpload = async (event) => {
+    const file = event.target.files[0]
+    if (!file) return
+
+    try {
+      setUploading(true)
+      const result = await uploadDocument(file)
+      setMessage(`✅ ${result.filename} uploaded successfully (${result.chunks_created} chunks indexed)`)
+      await fetchDocs()
+    } catch (err) {
+      console.error('Upload Error:', err)
+      setMessage(`❌ ${err instanceof Error ? err.message : 'Upload failed'}`)
+    } finally {
+      setUploading(false)
+      if (fileInputRef.current) fileInputRef.current.value = ''
+    }
+  }
+
+  const handleReindex = async () => {
+    try {
+      setIndexing(true)
+      const result = await triggerRepositoryIndex()
+      setMessage(`✅ Re-indexed ${result.documents_indexed} documents (${result.total_chunks} total chunks)`)
+      await fetchDocs()
+    } catch (err) {
+      console.error('Re-index Error:', err)
+      setMessage(`❌ Re-index failed: ${err.message}`)
+    } finally {
+      setIndexing(false)
+    }
+  }
+
+  const filteredDocs = documents.filter((doc) => {
+    const term = searchTerm.toLowerCase()
+    const titleMatch = (doc.title || '').toLowerCase().includes(term)
+    const fileMatch = (doc.filename || '').toLowerCase().includes(term)
+    const catMatch = (doc.category || '').toLowerCase().includes(term)
+    return titleMatch || fileMatch || catMatch
+  })
 
   return (
     <div>
       <Header
-        title="Documents"
-        description="Manage and browse department documents and policies"
+        title="Knowledge Repository"
+        description="Centralized Maharashtra Government documents and policy repository"
         actions={
-          <>
+          <div className="flex items-center gap-3">
+            <Button variant="secondary" onClick={handleReindex} disabled={indexing || uploading}>
+              <RefreshCw className={`h-4 w-4 ${indexing ? 'animate-spin' : ''}`} />
+              {indexing ? 'Indexing...' : 'Re-index Repository'}
+            </Button>
             <input
               type="file"
               accept=".pdf"
@@ -113,20 +91,19 @@ export default function Documents() {
               ref={fileInputRef}
               onChange={handleUpload}
             />
-        
             <Button
-              onClick={() => fileInputRef.current.click()}
-              disabled={uploading}
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploading || indexing}
             >
               <Upload className="h-4 w-4" />
-              {uploading ? "Uploading..." : "Upload Document"}
+              {uploading ? 'Uploading...' : 'Upload Document'}
             </Button>
-          </>
+          </div>
         }
       />
 
       {message && (
-        <div className="mb-4 rounded-lg border border-green-600 bg-green-900/20 p-3 text-green-400">
+        <div className="mb-4 rounded-lg border border-border bg-surface-overlay p-3 text-sm text-slate-200">
           {message}
         </div>
       )}
@@ -136,62 +113,65 @@ export default function Documents() {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
-              placeholder="Search documents..."
+              placeholder="Search documents by title, filename, or category..."
               className="pl-10"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <Button variant="secondary">
-            <Filter className="h-4 w-4" />
-            Filters
-          </Button>
         </div>
       </Card>
 
       <div className="overflow-hidden rounded-xl border border-border">
-        <table className="w-full text-left text-sm">
-          <thead>
-            <tr className="border-b border-border bg-surface-raised">
-              <th className="px-5 py-3.5 font-medium text-muted">Document</th>
-              <th className="hidden px-5 py-3.5 font-medium text-muted md:table-cell">Category</th>
-              <th className="hidden px-5 py-3.5 font-medium text-muted lg:table-cell">Size</th>
-              <th className="hidden px-5 py-3.5 font-medium text-muted sm:table-cell">Updated</th>
-              <th className="px-5 py-3.5 font-medium text-muted">Status</th>
-              <th className="px-5 py-3.5" />
-            </tr>
-          </thead>
-          <tbody>
-            {documents.map((doc) => (
-              <tr
-                key={doc.name}
-                className="border-b border-border-subtle transition-colors last:border-0 hover:bg-surface-hover"
-              >
-                <td className="px-5 py-4">
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-lg bg-accent-blue/10 p-2">
-                      <FileText className="h-4 w-4 text-accent-blue" />
-                    </div>
-                    <span className="font-medium text-slate-200">{doc.name}</span>
-                  </div>
-                </td>
-                <td className="hidden px-5 py-4 text-muted md:table-cell">{doc.category}</td>
-                <td className="hidden px-5 py-4 text-muted lg:table-cell">{doc.size}</td>
-                <td className="hidden px-5 py-4 text-muted sm:table-cell">{doc.updated}</td>
-                <td className="px-5 py-4">
-                  <Badge variant={doc.variant}>{doc.status}</Badge>
-                </td>
-                <td className="px-5 py-4">
-                  <button
-                    type="button"
-                    className="rounded-lg p-1.5 text-muted transition-colors hover:bg-surface-overlay hover:text-slate-200"
-                    aria-label="Document options"
-                  >
-                    <MoreVertical className="h-4 w-4" />
-                  </button>
-                </td>
+        {loading ? (
+          <div className="p-8 text-center text-sm text-muted">Loading repository documents...</div>
+        ) : filteredDocs.length === 0 ? (
+          <div className="p-8 text-center text-sm text-muted">
+            {searchTerm ? 'No matching documents found.' : 'No documents in repository. Upload a PDF or click Re-index.'}
+          </div>
+        ) : (
+          <table className="w-full text-left text-sm">
+            <thead>
+              <tr className="border-b border-border bg-surface-raised">
+                <th className="px-5 py-3.5 font-medium text-muted">Document</th>
+                <th className="hidden px-5 py-3.5 font-medium text-muted md:table-cell">Category</th>
+                <th className="hidden px-5 py-3.5 font-medium text-muted lg:table-cell">Department</th>
+                <th className="hidden px-5 py-3.5 font-medium text-muted lg:table-cell">Language</th>
+                <th className="hidden px-5 py-3.5 font-medium text-muted lg:table-cell">Size</th>
+                <th className="hidden px-5 py-3.5 font-medium text-muted sm:table-cell">Indexed Date</th>
+                <th className="px-5 py-3.5 font-medium text-muted">Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredDocs.map((doc) => (
+                <tr
+                  key={doc.id || doc.filename}
+                  className="border-b border-border-subtle transition-colors last:border-0 hover:bg-surface-hover"
+                >
+                  <td className="px-5 py-4">
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-lg bg-accent-blue/10 p-2">
+                        <FileText className="h-4 w-4 text-accent-blue" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="font-medium text-slate-200">{doc.title || doc.filename}</p>
+                        <p className="truncate text-xs text-muted-foreground">{doc.filename}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="hidden px-5 py-4 text-muted md:table-cell">{doc.category || 'General'}</td>
+                  <td className="hidden px-5 py-4 text-muted lg:table-cell">{doc.department || 'Administrative'}</td>
+                  <td className="hidden px-5 py-4 text-muted lg:table-cell">{doc.language || 'English'}</td>
+                  <td className="hidden px-5 py-4 text-muted lg:table-cell">{doc.size || 'N/A'}</td>
+                  <td className="hidden px-5 py-4 text-muted sm:table-cell">{doc.upload_date || 'Recent'}</td>
+                  <td className="px-5 py-4">
+                    <Badge variant={doc.variant || 'success'}>{doc.status || 'Indexed'}</Badge>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   )

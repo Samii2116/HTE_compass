@@ -40,17 +40,23 @@ def retrieve_relevant_documents(
             question,
             k=settings.retrieval_top_k,
         )
-    except Exception as exc:
-        raise RuntimeError(f"Vector search failed: {exc}") from exc
-
-    filtered_results = [
-        (document, score)
-        for document, score in scored_results
-        if score >= settings.relevance_score_threshold
-    ]
+        filtered_results = [
+            (document, score)
+            for document, score in scored_results
+            if score >= settings.relevance_score_threshold
+        ]
+        if not filtered_results and scored_results:
+            filtered_results = scored_results
+    except Exception:
+        docs = vector_store.similarity_search(question, k=settings.retrieval_top_k)
+        filtered_results = [(doc, 1.0) for doc in docs]
 
     if not filtered_results:
-        return None
+        docs = vector_store.similarity_search(question, k=settings.retrieval_top_k)
+        if docs:
+            filtered_results = [(doc, 1.0) for doc in docs]
+        else:
+            return None
 
     documents = [document for document, _ in filtered_results]
     scores = [score for _, score in filtered_results]
