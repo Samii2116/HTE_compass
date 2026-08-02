@@ -31,15 +31,6 @@ export default function ChatMessage({ role, content, timestamp, sourceDocument, 
         >
           {content}
         </div>
-        {isAssistant && sourceDocument && (
-          <div className="mt-1 flex items-center gap-1.5 rounded-md border border-accent-purple/20 bg-accent-purple/10 px-2.5 py-1 text-xs text-purple-300">
-            <FileText className="h-3 w-3 shrink-0 text-purple-400" />
-            <span>
-              Source: <strong className="font-medium">{sourceDocument}</strong>
-              {pageNumber ? ` (Page ${pageNumber})` : ''}
-            </span>
-          </div>
-        )}
         {timestamp && (
           <span className="px-1 text-xs text-muted-foreground">{timestamp}</span>
         )}

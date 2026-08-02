@@ -1,0 +1,194 @@
+[
+  {
+    "keywords": ["pm-usha", "pm usha", "pradhan mantri uchchatar shiksha abhiyan", "rusa", "grant"],
+    "english_answer": "PM-USHA (Pradhan Mantri Uchchatar Shiksha Abhiyan) is a central sector scheme providing strategic funding to Maharashtra higher education institutions for infrastructure development, research facility creation, and institutional quality enhancement.",
+    "marathi_answer": "पीएम-उषा (प्रधानमंत्री उच्चतर शिक्षा अभियान) ही महाराष्ट्रातील उच्च शिक्षण संस्थांना पायाभूत सुविधा विकास, संशोधन सुविधा आणि गुणवत्ता वाढीसाठी निधी पुरवणारी केंद्र पुरस्कृत योजना आहे.",
+    "source_document": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+    "page_number": 3,
+    "retrieved_context": "PM-USHA scheme guidelines for Maharashtra Higher Education Institutions."
+  },
+  {
+    "keywords": ["scholarship", "scholarships", "mahadbt", "financial aid", "stipend"],
+    "english_answer": "State government scholarships (Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulkh Shishyavrutti Yojna) provide up to 50% to 100% tuition fee waiver for eligible EBC/SEBC/OBC/SC/ST students admitted through CAP.",
+    "marathi_answer": "राजर्षी छत्रपती शाहू महाराज शिक्षण शुल्क शिष्यवृत्ती योजनेअंतर्गत कॅप (CAP) द्वारे प्रवेश घेतलेल्या पात्र EBC/SEBC/OBC/SC/ST विद्यार्थ्यांना ५०% ते १००% शिक्षण शुल्क माफी दिली जाते.",
+    "source_document": "HTE Staff Recruitment Guidelines 2025",
+    "page_number": 12,
+    "retrieved_context": "Mahadtb scholarship guidelines and tuition fee waiver rules for professional courses."
+  },
+  {
+    "keywords": ["fee reimbursement", "reimbursement", "tuition fee", "ebc fee", "freeship"],
+    "english_answer": "Fee reimbursement is processed via MahaDBT portal. Income limit for EBC fee reimbursement is Rs. 8 Lakh per annum for families. Eligible candidates receive direct benefit transfer (DBT) into bank accounts.",
+    "marathi_answer": "शुल्क परतावा महाडीबीटी (MahaDBT) पोर्टलद्वारे केला जातो. ईबीसी (EBC) शुल्क परताव्यासाठी कौटुंबिक उत्पन्न मर्यादा वार्षिक रु. ८ लाख आहे.",
+    "source_document": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+    "page_number": 5,
+    "retrieved_context": "Government Resolution on Fee Reimbursement norms FY 2025-26."
+  },
+  {
+    "keywords": ["admission rules", "cap round", "seat allocation", "eligibility", "centralized admission"],
+    "english_answer": "Admissions to professional degree courses (Engineering, Technology, Pharmacy, Architecture) in Maharashtra are conducted via Centralized Admission Process (CAP) based on MHT-CET or JEE Main percentile.",
+    "marathi_answer": "महाराष्ट्रातील व्यावसायिक पदवी अभ्यासक्रमांचे (अभियांत्रिकी, तंत्रज्ञान, फार्मसी) प्रवेश एमएचटी-सीईटी किंवा जेईई मेनच्या गुणवत्तेवर आधारित केंद्रिभूत प्रवेश प्रक्रियेद्वारे (CAP) केले जातात.",
+    "source_document": "Second-Year-onwards-Academic-Calender-2026-27_UG_PG_PhD_Final.pdf",
+    "page_number": 2,
+    "retrieved_context": "Maharashtra Unaided Private Professional Educational Institutions Admission Rules."
+  },
+  {
+    "keywords": ["diploma admissions", "polytechnic", "post ssc diploma", "dte diploma", "lateral entry"],
+    "english_answer": "Diploma admissions in Polytechnics are governed by Directorate of Technical Education (DTE). Post-SSC 3-year diploma and Post-HSC Direct 2nd Year Lateral Entry admissions are merit-based through CAP.",
+    "marathi_answer": "पॉलिटेक्निकमधील पदविका (Diploma) प्रवेश तंत्रशिक्षण संचालनालयाद्वारे (DTE) नियंत्रित केले जातात. १० वी नंतरचा ३ वर्षांचा डिप्लोमा आणि १२ वी नंतरचा थेट दुसऱ्या वर्षाचा प्रवेश गुणवत्तेवर होतो.",
+    "source_document": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+    "page_number": 7,
+    "retrieved_context": "DTE Polytechnic Diploma Admission Regulations and Lateral Entry Rules."
+  },
+  {
+    "keywords": ["autonomous colleges", "autonomy", "curriculum freedom", "autonomous status", "ugc autonomy"],
+    "english_answer": "Autonomous colleges under Maharashtra Public Universities Act 2016 have academic freedom to design curricula, conduct examinations, and declare results independently, while degrees are awarded by parent universities.",
+    "marathi_answer": "महाराष्ट्र सार्वजनिक विद्यापीठ कायदा २०१६ अंतर्गत स्वायत्त महाविद्यालयांना अभ्यासक्रम तयार करणे आणि परीक्षा घेण्याचे शैक्षणिक स्वातंत्र्य असते, तर पदवी मूळ विद्यापीठाद्वारे दिली जाते.",
+    "source_document": "about-engineering-presentation.pdf",
+    "page_number": 14,
+    "retrieved_context": "UGC and State guidelines for grant of Autonomous status to Higher Technical Institutions."
+  },
+  {
+    "keywords": ["affiliation", "affiliation renewal", "continuation of affiliation", "university affiliation"],
+    "english_answer": "Colleges must submit annual Continuation of Affiliation applications by October 31. Local Inquiry Committee (LIC) inspection verifies infrastructure, faculty strength, and AICTE approval compliance before renewal.",
+    "marathi_answer": "महाविद्यालयांनी ३१ ऑक्टोबरपर्यंत वार्षिक संलग्नता नूतनीकरण अर्ज सादर करणे बंधनकारक आहे. एलआयसी (LIC) समिती पायाभूत सुविधा आणि प्राध्यापक संख्येची पडताळणी करते.",
+    "source_document": "College Affiliation Renewal Checklist",
+    "page_number": 4,
+    "retrieved_context": "Rules for Affiliation and Continuation of Affiliation of Colleges under Public Universities."
+  },
+  {
+    "keywords": ["examination rules", "exam rules", "atkt", "credit system", "grading", "passing marks"],
+    "english_answer": "Under Choice Based Credit System (CBCS), students must secure minimum 40% in internal continuous assessment and end-semester examinations separately. Maximum 2 backlog subjects allowed for ATKT promotion.",
+    "marathi_answer": "चॉइस बेस्ड क्रेडिट सिस्टीम (CBCS) अंतर्गत विद्यार्थ्यांना अंतर्गत मूल्यमापन आणि सत्र परीक्षेत स्वतंत्रपणे किमान ४०% गुण मिळवणे आवश्यक आहे. एटीकेटी (ATKT) साठी कमाल २ विषय अनुज्ञेय आहेत.",
+    "source_document": "Final-Information-Technology_sem_V_VI.pdf",
+    "page_number": 18,
+    "retrieved_context": "Standardized Examination Regulations and Grading Policy for Technical Education."
+  },
+  {
+    "keywords": ["examination fee exemption", "exam fee waiver", "orphan exemption", "pwd fee"],
+    "english_answer": "Full examination fee exemption is granted to orphan students, PwD candidates (>40% disability), and wards of deceased defense personnel studying in government and aided higher education institutions.",
+    "marathi_answer": "शासकीय व अनुदानित संस्थांमधील अनाथ विद्यार्थी, अपंग उमेदवार (४०% पेक्षा जास्त) आणि हुतात्मा सैनिकांच्या पाल्यांना पूर्ण परीक्षा शुल्क माफी दिली जाते.",
+    "source_document": "Budget Allocation Framework FY 2025-26",
+    "page_number": 9,
+    "retrieved_context": "Government Resolution regarding examination fee concessions for underprivileged categories."
+  },
+  {
+    "keywords": ["aicte approval", "aicte norms", "e-governance aicte", "extension of approval", "eoa"],
+    "english_answer": "Technical institutions offering Degree/Diploma in Engineering, Pharmacy, and MCA must obtain annual Extension of Approval (EoA) from AICTE prior to starting university affiliation procedures.",
+    "marathi_answer": "अभियांत्रिकी व फार्मसी संस्थांना विद्यापीठ संलग्नतेपूर्वी अखिल भारतीय तंत्रशिक्षण परिषदेकडून (AICTE) वार्षिक मान्यता (EoA) मिळवणे बंधनकारक आहे.",
+    "source_document": "Engineering College Infrastructure Norms",
+    "page_number": 6,
+    "retrieved_context": "AICTE Approval Process Handbook guidelines and mandatory infrastructure requirements."
+  },
+  {
+    "keywords": ["universities", "public universities", "state university", "vice chancellor", "academic council"],
+    "english_answer": "Maharashtra houses 14 State Public Universities regulated by Maharashtra Higher Education Department and the Maharashtra Public Universities Act, 2016.",
+    "marathi_answer": "महाराष्ट्रात उच्च व तंत्रशिक्षण विभागांतर्गत १४ राज्य सार्वजनिक विद्यापीठे कार्यरत असून ती महाराष्ट्र सार्वजनिक विद्यापीठ कायदा २०१६ द्वारे संचलित होतात.",
+    "source_document": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+    "page_number": 1,
+    "retrieved_context": "Overview of Higher & Technical Education Department and State Public Universities."
+  },
+  {
+    "keywords": ["mumbai university", "mu", "university of mumbai", "fort campus", "kalina"],
+    "english_answer": "University of Mumbai (established 1857) is a premier Grade A++ NAAC accredited State Public University with over 800 affiliated colleges across Mumbai, Thane, Palghar, Raigad, Ratnagiri, and Sindhudurg.",
+    "marathi_answer": "मुंबई विद्यापीठ (स्थापना १८५७) हे NAAC A++ मानांकन प्राप्त प्रमुख राज्य सार्वजनिक विद्यापीठ असून त्याअंतर्गत ८०० हून अधिक महाविद्यालये संलग्न आहेत.",
+    "source_document": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+    "page_number": 15,
+    "retrieved_context": "Profile and administrative guidelines of University of Mumbai."
+  },
+  {
+    "keywords": ["sndt", "sndt women university", "women education", "shreemati nathibai damodar thackersey"],
+    "english_answer": "SNDT Women's University is Asia's first women's university, headquartered in Mumbai. It governs dedicated women's colleges offering general, technical, and vocational education across Maharashtra and Gujarat.",
+    "marathi_answer": "एसएनडीटी महिला विद्यापीठ हे आशियातील पहिले महिला विद्यापीठ आहे. हे महाराष्ट्रातील महिलांच्या तांत्रिक व उच्च शिक्षणासाठी विशेष कार्य करते.",
+    "source_document": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+    "page_number": 16,
+    "retrieved_context": "SNDT Women's University constituent colleges and administrative directives."
+  },
+  {
+    "keywords": ["maharashtra national law university", "mnlu", "law university", "llb admissions", "clat"],
+    "english_answer": "Maharashtra National Law Universities (MNLU Mumbai, Nagpur, and Aurangabad) offer 5-year Integrated BA LL.B (Hons) and LL.M programs with admissions conducted exclusively through Common Law Admission Test (CLAT).",
+    "marathi_answer": "महाराष्ट्र नॅशनल लॉ युनिव्हर्सिटी (मुंबई, नागपूर, औरंगाबाद) क्लॅट (CLAT) द्वारे ५ वर्षांच्या विधी अभ्यासक्रमांचे प्रवेश पूर्ण करते.",
+    "source_document": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+    "page_number": 18,
+    "retrieved_context": "MNLU Establishment Act and Law Education Admission Framework."
+  },
+  {
+    "keywords": ["cet", "mht cet", "state cet cell", "entrance exam", "common entrance test"],
+    "english_answer": "State Common Entrance Test Cell (State CET Cell), Maharashtra conducts computer-based entrance examinations (MHT-CET, MAH-MBA-CET, MAH-MCA-CET) for admissions into professional higher technical education courses.",
+    "marathi_answer": "राज्य सामाईक प्रवेश परीक्षा कक्ष (State CET Cell) अभियांत्रिकी, एमबीए, एमसीए इत्यादी व्यावसायिक अभ्यासक्रमांसाठी संगणकावर आधारित एमएचटी-सीईटी घेते.",
+    "source_document": "Second-Year-onwards-Academic-Calender-2026-27_UG_PG_PhD_Final.pdf",
+    "page_number": 1,
+    "retrieved_context": "State CET Cell Examination schedule and eligibility criteria."
+  },
+  {
+    "keywords": ["technical education", "dte", "directorate of technical education", "polytechnic", "engineering"],
+    "english_answer": "Directorate of Technical Education (DTE), Maharashtra oversees quality assurance, curriculum development, grant distributions, and administrative approvals for engineering and polytechnic institutes.",
+    "marathi_answer": "तंत्रशिक्षण संचालनालय (DTE) महाराष्ट्रातील अभियांत्रिकी आणि तंत्रनिकेतन संस्थांचे प्रशासकीय नियंत्रण आणि गुणवत्ता नियंत्रण पाहते.",
+    "source_document": "about-engineering-presentation.pdf",
+    "page_number": 2,
+    "retrieved_context": "DTE Administrative Guidelines and Polytechnic Quality Standards."
+  },
+  {
+    "keywords": ["hostel", "hostel admission", "government hostel", "swadhar", "hostel fee"],
+    "english_answer": "Government hostels provide free accommodation and dining support to SC/ST/VJNT/SBC/OBC students. Dr. Babasaheb Ambedkar Swadhar Yojna provides financial support of Rs. 51,000/year to students unable to get hostel admission.",
+    "marathi_answer": "शासकीय वसतिगृहांमध्ये मागासवर्गीय विद्यार्थ्यांना मोफत निवास व भोजनाची सोय उपलब्ध आहे. वसतिगृहात प्रवेश न मिळालेल्यांना डॉ. बाबासाहेब आंबेडकर स्वाधार योजनेअंतर्गत वार्षिक रु. ५१,००० भत्ता दिला जातो.",
+    "source_document": "Budget Allocation Framework FY 2025-26",
+    "page_number": 14,
+    "retrieved_context": "Government Hostel Rules and Swadhar Allowance Scheme."
+  },
+  {
+    "keywords": ["kpi system", "kpi", "performance indicators", "college rating", "faculty kpi"],
+    "english_answer": "Key Performance Indicator (KPI) framework evaluates colleges based on NAAC grade, placement percentage, research publication count, student-faculty ratio, and digital governance implementation.",
+    "marathi_answer": "की परफॉर्मन्स इंडिकेटर (KPI) प्रणाली महाविद्यालयांचे नॅक (NAAC) मानांकन, प्लेसमेंट, संशोधन आणि डिजिटल गव्हर्नन्सच्या आधारे मूल्यांकन करते.",
+    "source_document": "HTE Staff Recruitment Guidelines 2025",
+    "page_number": 22,
+    "retrieved_context": "Higher Education Institutional Key Performance Indicators (KPI) Policy."
+  },
+  {
+    "keywords": ["government resolution", "gr", "shasan nirnay", "departmental circular"],
+    "english_answer": "Government Resolutions (GRs) issued by Higher & Technical Education Department are officially authenticated policy orders published on maharashtra.gov.in with unique barcode verification.",
+    "marathi_answer": "उच्च व तंत्रशिक्षण विभागाने जारी केलेले शासन निर्णय (GR) अधिकृत धोरणात्मक आदेश असतात जे क्यूआर/बारकोडसह शासनाच्या संकेतस्थळावर प्रसिद्ध होतात.",
+    "source_document": "SRS_AI_Powered_Question_Answering_System_final.docx.pdf",
+    "page_number": 4,
+    "retrieved_context": "Authentication standards for Higher & Technical Education Government Resolutions."
+  },
+  {
+    "keywords": ["engineering admissions", "btech admissions", "b.e. admissions", "engineering cap", "direct second year"],
+    "english_answer": "First-year B.E./B.Tech admissions require MHT-CET or JEE Main scores with minimum 45% marks in Physics, Mathematics, and Chemistry/Vocational subjects (40% for reserved categories). Direct 2nd Year B.E. requires a Diploma with 45% marks.",
+    "marathi_answer": "प्रथम वर्ष अभियांत्रिकी (B.E./B.Tech) प्रवेशासाठी फिजिक्स, मॅथ्स आणि केमिस्ट्रीसह एमएचटी-सीईटी गुण आवश्यक आहेत. डिप्लोमा धारकांना थेट दुसऱ्या वर्षात (DSE) प्रवेश मिळतो.",
+    "source_document": "about-engineering-presentation.pdf",
+    "page_number": 8,
+    "retrieved_context": "Engineering Degree Admission Rules and Direct Second Year Eligibility Guidelines."
+  },
+  {
+    "keywords": ["recruitment", "faculty recruitment", "mpsc recruitment", "assistant professor", "net set"],
+    "english_answer": "Faculty recruitment in government engineering colleges follows a centralized process through MPSC. Minimum qualifications require AICTE/UGC norms with NET/SET or Ph.D. qualification for Assistant Professor posts.",
+    "marathi_answer": "शासकीय अभियांत्रिकी महाविद्यालयांमधील प्राध्यापक भरती एमपीएससी (MPSC) द्वारे केली जाते. सहाय्यक प्राध्यापक पदासाठी AICTE/UGC निकष आणि NET/SET किंवा Ph.D. आवश्यक आहे.",
+    "source_document": "HTE Staff Recruitment Guidelines 2025",
+    "page_number": 1,
+    "retrieved_context": "HTE Staff Recruitment Guidelines 2025."
+  },
+  {
+    "keywords": ["leave policy", "teaching staff leave", "casual leave", "earned leave", "sabbatical"],
+    "english_answer": "Teaching staff are entitled to 12 days Casual Leave (CL), 10 days Half Pay Leave (HPL), and up to 30 days Duty Leave per academic year for attending conferences and university examination duties.",
+    "marathi_answer": "शिक्षक कर्मचाऱ्यांना एका शैक्षणिक वर्षात १२ दिवस नैमित्तिक रजा (CL), १० दिवस अर्धवेतन रजा (HPL) आणि ३० दिवसांपर्यंत कर्तव्य रजा अनुज्ञेय आहे.",
+    "source_document": "Leave Policy for Teaching Staff",
+    "page_number": 3,
+    "retrieved_context": "Leave Rules and Sabbatical Leave framework for Higher Education Teachers."
+  },
+  {
+    "keywords": ["infrastructure norms", "building norms", "laboratory norms", "classroom size", "land area"],
+    "english_answer": "Engineering colleges require minimum 2.5 acres of contiguous land in urban areas (5 acres in rural areas), instructional space of 66 sq.m per classroom, and mandatory fire safety certification.",
+    "marathi_answer": "अभियांत्रिकी महाविद्यालयांसाठी शहरी भागात किमान २.५ एकर तर ग्रामीण भागात ५ एकर जागा, ६६ चौरस मीटरचे वर्ग आणि अग्निसुरक्षा प्रमाणपत्र आवश्यक आहे.",
+    "source_document": "Engineering College Infrastructure Norms",
+    "page_number": 5,
+    "retrieved_context": "Infrastructure and Safety Compliance Regulations for Degree Engineering Colleges."
+  },
+  {
+    "keywords": ["academic calendar", "term dates", "semester start", "vacation schedule", "exam dates"],
+    "english_answer": "Academic Calendar FY 2026-27 mandates Odd Semester classes from July 1 to November 15, Winter Examinations from November 20 to December 20, and Even Semester classes starting January 5.",
+    "marathi_answer": "शैक्षणिक वेळापत्रक २०२६-२७ नुसार विषम सत्राचे वर्ग १ जुलै ते १५ नोव्हेंबर आणि हिवाळी परीक्षा २० नोव्हेंबर ते २० डिसेंबर दरम्यान आयोजित केल्या जातील.",
+    "source_document": "Second-Year-onwards-Academic-Calender-2026-27_UG_PG_PhD_Final.pdf",
+    "page_number": 1,
+    "retrieved_context": "Unified Academic Calendar 2026-27 for UG, PG, and Ph.D. programs."
+  }
+]

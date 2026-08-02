@@ -56,7 +56,9 @@ export async function triggerRepositoryIndex() {
   return await response.json();
 }
 
-export async function askQuestion(question) {
+export async function askQuestion(question, language) {
+  const selectedLanguage = language || localStorage.getItem('hte_language') || 'English';
+
   const response = await fetch(`${API_URL}/chat`, {
     method: "POST",
     headers: {
@@ -64,6 +66,7 @@ export async function askQuestion(question) {
     },
     body: JSON.stringify({
       question,
+      language: selectedLanguage,
     }),
   });
 

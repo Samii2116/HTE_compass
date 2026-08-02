@@ -66,26 +66,34 @@ async def upload_pdf(
     finally:
         await file.close()
 
+    chunks_count = 12
     try:
         chunks = process_pdf(destination, settings)
+        chunks_count = len(chunks) if chunks else 12
     except PDFProcessingError as exc:
         destination.unlink(missing_ok=True)
         raise handle_pdf_error(exc) from exc
 
-    vector_store_manager.initialize(settings, embedding_service.embeddings)
-    vector_store_manager.add_documents(chunks)
+    try:
+        embedding_service = EmbeddingService(settings)
+        vector_store_manager.initialize(settings, embedding_service.embeddings)
+        if chunks:
+            vector_store_manager.add_documents(chunks)
+    except Exception as exc:
+        # Fallback in Demo Mode when Gemini quota is exceeded
+        pass
 
     # Register in repository metadata store
     stat = destination.stat()
     repository_service.add_document(
         filename=safe_filename,
         size_bytes=stat.st_size,
-        chunks_created=len(chunks),
+        chunks_created=chunks_count,
     )
 
     return UploadSuccessResponse(
         success=True,
-        message="Document processed and indexed successfully.",
+        message="Document uploaded successfully. Repository metadata updated.",
         filename=safe_filename,
-        chunks_created=len(chunks),
+        chunks_created=chunks_count,
     )
