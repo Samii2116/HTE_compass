@@ -587,16 +587,114 @@
       "chunks_created": 4,
       "status": "Indexed",
       "variant": "success"
+    },
+    "upma.pdf": {
+      "id": "upma.pdf",
+      "filename": "upma.pdf",
+      "title": "Upma",
+      "category": "General",
+      "department": "Administrative",
+      "language": "English",
+      "upload_date": "Aug 02, 2026",
+      "size_bytes": 102457,
+      "size": "100.1 KB",
+      "chunks_created": 3,
+      "status": "Indexed",
+      "variant": "success"
+    },
+    "Orbitrix2.0_ISRO_BHA_2026.pdf": {
+      "id": "Orbitrix2.0_ISRO_BHA_2026.pdf",
+      "filename": "Orbitrix2.0_ISRO_BHA_2026.pdf",
+      "title": "Orbitrix2.0 Isro Bha 2026",
+      "category": "General",
+      "department": "Technical Education",
+      "language": "English",
+      "upload_date": "Aug 02, 2026",
+      "size_bytes": 3952148,
+      "size": "3.8 MB",
+      "chunks_created": 12,
+      "status": "Indexed",
+      "variant": "success"
+    },
+    "VJFoodie_Receipt_26.pdf": {
+      "id": "VJFoodie_Receipt_26.pdf",
+      "filename": "VJFoodie_Receipt_26.pdf",
+      "title": "Vjfoodie Receipt 26",
+      "category": "General",
+      "department": "Administrative",
+      "language": "English",
+      "upload_date": "Aug 02, 2026",
+      "size_bytes": 6878,
+      "size": "6.7 KB",
+      "chunks_created": 12,
+      "status": "Indexed",
+      "variant": "success"
+    },
+    "OST_Lab_Final_Report_Formatted.pdf": {
+      "id": "OST_Lab_Final_Report_Formatted.pdf",
+      "filename": "OST_Lab_Final_Report_Formatted.pdf",
+      "title": "Ost Lab Final Report Formatted",
+      "category": "General",
+      "department": "Administrative",
+      "language": "English",
+      "upload_date": "Aug 02, 2026",
+      "size_bytes": 67771,
+      "size": "66.2 KB",
+      "chunks_created": 14,
+      "status": "Indexed",
+      "variant": "success"
     }
   },
   "stats": {
-    "total_documents": 42,
-    "total_chunks": 1053,
-    "total_queries": 17,
-    "last_indexed_time": "2026-08-02 15:14:37",
+    "total_documents": 46,
+    "total_chunks": 1094,
+    "total_queries": 21,
+    "last_indexed_time": "2026-08-02 16:52:32",
     "index_status": "Healthy"
   },
   "recent_activity": [
+    {
+      "title": "AI Query resolved",
+      "description": "Query: \"whats in the report?\"",
+      "time": "Just now",
+      "badge": "Assistant",
+      "variant": "purple"
+    },
+    {
+      "title": "AI Query resolved",
+      "description": "Query: \"what is ost?\"",
+      "time": "Just now",
+      "badge": "Assistant",
+      "variant": "purple"
+    },
+    {
+      "title": "Document uploaded & indexed",
+      "description": "OST_Lab_Final_Report_Formatted.pdf (66.2 KB, 14 chunks)",
+      "time": "Just now",
+      "badge": "Upload",
+      "variant": "blue"
+    },
+    {
+      "title": "Document uploaded & indexed",
+      "description": "upma.pdf (100.1 KB, 3 chunks)",
+      "time": "Just now",
+      "badge": "Upload",
+      "variant": "blue"
+    },
+    {
+      "title": "AI Query resolved",
+      "description": "Query: \"what\"",
+      "time": "Just now",
+      "badge": "Assistant",
+      "variant": "purple"
+    },
+    {
+      "title": "AI Query resolved",
+      "description": "Query: \"hi\"",
+      "time": "Just now",
+      "badge": "Assistant",
+      "variant": "purple"
+    },
     {
       "title": "AI Query resolved",
       "description": "Query: \"unrrelated question\"",
@@ -694,48 +792,6 @@
       "time": "Just now",
       "badge": "Assistant",
       "variant": "purple"
-    },
-    {
-      "title": "AI Query resolved",
-      "description": "Query: \"what is PM_USHA\"",
-      "time": "Just now",
-      "badge": "Assistant",
-      "variant": "purple"
-    },
-    {
-      "title": "AI Query resolved",
-      "description": "Query: \"what is PM_USHA\"",
-      "time": "Just now",
-      "badge": "Assistant",
-      "variant": "purple"
-    },
-    {
-      "title": "Document uploaded & indexed",
-      "description": "23-GR-08-07-2024-100-to-Female.pdf (240.9 KB, 12 chunks)",
-      "time": "Just now",
-      "badge": "Upload",
-      "variant": "blue"
-    },
-    {
-      "title": "AI Query resolved",
-      "description": "Query: \"what is PM_USha\"",
-      "time": "Just now",
-      "badge": "Assistant",
-      "variant": "purple"
-    },
-    {
-      "title": "Document uploaded & indexed",
-      "description": "uni18.pdf (304.6 KB, 4 chunks)",
-      "time": "Just now",
-      "badge": "Upload",
-      "variant": "blue"
-    },
-    {
-      "title": "Document uploaded & indexed",
-      "description": "uni16.pdf (144.2 KB, 6 chunks)",
-      "time": "Just now",
-      "badge": "Upload",
-      "variant": "blue"
     }
   ],
   "top_queries": {
@@ -750,6 +806,10 @@
     "what are the affiliation requirement for colleges": 1,
     "what is AICTE approval": 1,
     "what is the fee reimbursement scheme": 1,
-    "unrrelated question": 1
+    "unrrelated question": 1,
+    "hi": 1,
+    "what": 1,
+    "what is ost?": 1,
+    "whats in the report?": 1
   }
 }

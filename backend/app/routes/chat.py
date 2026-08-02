@@ -7,7 +7,6 @@ from app.rag.vector_store import vector_store_manager
 from app.services.gemini_service import GeminiService, NO_RELEVANT_INFO_MESSAGE
 from app.services.embedding_service import EmbeddingService
 
-from app.services.knowledge_service import knowledge_service
 from app.services.repository_service import repository_service
 
 router = APIRouter(tags=["Chat"])
@@ -78,7 +77,6 @@ async def chat(
 
     language = payload.language or "English"
 
-    # Attempt live RAG pipeline first if API key is active
     try:
         embedding_service = EmbeddingService(settings)
         gemini_service = GeminiService(settings)
@@ -95,21 +93,13 @@ async def chat(
                     page_number=retrieval.page_number,
                     retrieved_context=retrieval.context,
                 )
+            else:
+                return ChatResponse(**build_no_result_response())
+        
+        return ChatResponse(**build_no_result_response())
     except Exception as exc:
-        print("LIVE RAG FAILED:", exc)  
-
-    # Seamless Demo Mode fallback
-    print("Question received:", question)
-    print("Language:", language)
-
-    res = knowledge_service.query(question, language=language)
-
-    print("Knowledge Service Response:", res)
-    repository_service.record_query(question, res.get("source_document"))
-
-    return ChatResponse(
-        answer=res["answer"],
-        source_document=res.get("source_document"),
-        page_number=res.get("page_number"),
-        retrieved_context=res.get("retrieved_context"),
-    )
+        print("LIVE RAG FAILED:", exc)
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail=f"Live RAG failed: {exc}",
+        )

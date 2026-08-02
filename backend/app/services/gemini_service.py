@@ -58,8 +58,22 @@ class GeminiService:
                     "context": context,
                 }
             )
+
             content = response.content if hasattr(response, "content") else str(response)
+
+            if isinstance(content, list):
+                text_parts = []
+
+                for item in content:
+                    if isinstance(item, dict):
+                        text_parts.append(item.get("text", ""))
+                    else:
+                        text_parts.append(str(item))
+
+                content = "".join(text_parts)
+
             return content.strip()
+
         except Exception as exc:
             raise HTTPException(
                 status_code=status.HTTP_502_BAD_GATEWAY,

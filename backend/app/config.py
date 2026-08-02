@@ -22,8 +22,8 @@ class Settings(BaseSettings):
     retrieval_top_k: int = 4
     relevance_score_threshold: float = 0.5
 
-    gemini_model: str = "gemini-2.0-flash"
-    embedding_model: str = "models/text-embedding-004"
+    gemini_model: str = "gemini-flash-latest"
+    embedding_model: str = "models/gemini-embedding-001"
 
     cors_origins: list[str] = Field(
     default_factory=lambda: [

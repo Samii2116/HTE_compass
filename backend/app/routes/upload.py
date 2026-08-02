@@ -80,8 +80,10 @@ async def upload_pdf(
         if chunks:
             vector_store_manager.add_documents(chunks)
     except Exception as exc:
-        # Fallback in Demo Mode when Gemini quota is exceeded
-        pass
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail=f"Failed to generate embeddings and index document: {exc}",
+        ) from exc
 
     # Register in repository metadata store
     stat = destination.stat()
